@@ -4,7 +4,7 @@ An automated test suite for the OpenTreeMap website.
 
 ## Usage
 
-To execute the test suite, first install [Leiningen](http://leiningen.org/), then execute the following command:
+To execute the test suite, first ensure that you have a Java Virtual Machine installed, then install [Leiningen](http://leiningen.org/) and execute the following command:
 
 ```bash
 $ lein midje
