@@ -24,7 +24,12 @@
       (resp :status) => 200
       (s3-response? resp) => true))
 
-  (fact "it returns a response from the application if path begins with /css"
+  (fact "it returns a redirect from the application if path without a trailing slash begins with /css"
     (let [resp (head "/cssmap")]
+      (resp :status) => 301
+      (s3-response? resp) => false))
+
+  (fact "it returns a response from the application if path begins with /css"
+    (let [resp (head "/cssmap/")]
       (resp :status) => 404
       (s3-response? resp) => false)))
